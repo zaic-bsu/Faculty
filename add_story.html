@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Добавить историю студента</title>
+  <link rel="stylesheet" href="styles/style.css">
+</head>
+<body>
+  <header>
+    <h1>Добавить историю студента</h1>
+    <nav>
+      <ul class="menu">
+        <li><a href="index.html">Главная</a></li>
+        <li><a href="about.html">Об институте</a></li>
+        <li><a href="students.html">Студенты</a></li>
+        <li><a href="add_story.html" class="active">Добавить историю</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <form id="storyForm">
+      <label>Имя студента:</label>
+      <input type="text" id="name" required>
+
+      <label>История:</label>
+      <textarea id="story" required></textarea>
+
+      <button type="submit" class="btn">Добавить</button>
+    </form>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 ИИиЦТ БелГУ</p>
+  </footer>
+
+  <script src="stories.js"></script>
+</body>
+</html>
