@@ -23,8 +23,20 @@
       <label>Имя студента:</label>
       <input type="text" id="name" required>
 
+      <label>Группа:</label>
+      <input type="text" id="group" placeholder="Например: ИС-21" required>
+
+      <label>Год обучения:</label>
+      <input type="number" id="year" min="1" max="6" required>
+
+      <label>Заголовок истории:</label>
+      <input type="text" id="title" required>
+
       <label>История:</label>
       <textarea id="story" required></textarea>
+
+      <label>Ссылка на фото (необязательно):</label>
+      <input type="text" id="photo" placeholder="https://example.com/photo.jpg">
 
       <button type="submit" class="btn">Добавить</button>
     </form>

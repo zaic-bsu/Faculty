@@ -5,11 +5,19 @@ document.addEventListener("DOMContentLoaded", () => {
   if (form) {
     form.addEventListener("submit", (e) => {
       e.preventDefault();
-      const name = document.getElementById("name").value;
-      const story = document.getElementById("story").value;
+
+      const data = {
+        name: document.getElementById("name").value,
+        group: document.getElementById("group").value,
+        year: document.getElementById("year").value,
+        title: document.getElementById("title").value,
+        story: document.getElementById("story").value,
+        photo: document.getElementById("photo").value
+      };
 
       const stories = JSON.parse(localStorage.getItem("stories") || "[]");
-      stories.push({ name, story });
+
+      stories.push(data);
       localStorage.setItem("stories", JSON.stringify(stories));
 
       form.reset();
@@ -19,10 +27,18 @@ document.addEventListener("DOMContentLoaded", () => {
 
   if (storiesContainer) {
     const stories = JSON.parse(localStorage.getItem("stories") || "[]");
-    stories.forEach(({ name, story }) => {
+
+    stories.forEach((s) => {
       const div = document.createElement("div");
       div.className = "student-card";
-      div.innerHTML = `<h3>${name}</h3><p>${story}</p>`;
+
+      div.innerHTML = `
+        <h3>${s.name} — ${s.group} (${s.year} курс)</h3>
+        <strong>${s.title}</strong>
+        <p>${s.story}</p>
+        ${s.photo ? `<img src="${s.photo}" style="max-width: 200px; border-radius: 5px; margin-top: 10px;">` : ""}
+      `;
+
       storiesContainer.appendChild(div);
     });
   }
